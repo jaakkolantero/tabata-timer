@@ -1,0 +1,1 @@
+{"name":"tabata-timer","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test tests/unit.test.js","test:e2e":"playwright test","dev":"node tests/server.js"},"devDependencies":{"@playwright/test":"^1.58.0"}}

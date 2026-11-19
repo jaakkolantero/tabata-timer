@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101713"><meta name="description" content="Selkeä Tabata-ajastin. Oma rytmi, täysi keskittyminen. Toimii myös ilman verkkoyhteyttä.">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Tabata — oma rytmi</title>
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon-192.png" type="image/png"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="stylesheet" href="./styles.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+<main>
+<header><a class="brand" href="./" aria-label="Tabata, etusivu"><span class="brand-icon" aria-hidden="true">Ⅱ</span> TABATA<span class="brand-dot">.</span></a><span class="eyebrow">OMA RYTMI.</span></header>
+<div class="intro"><h1>Vähemmän säätöä.<br><span>Enemmän liikettä.</span></h1><p>Sinä teet työn. Me pidämme ajan.</p></div>
+<div class="layout">
+<section class="timer-card" aria-label="Ajastin" data-phase="prepare">
+<div class="card-top"><span class="eyebrow">TÄSSÄ JA NYT</span><span id="state-badge">VALMIS ALOITTAMAAN</span></div>
+<div class="timer-face"><p id="phase">Valmistaudu</p><div id="time" role="timer" aria-label="Aikaa jäljellä" aria-live="off">00:10</div><p id="round">Ennen ensimmäistä kierrosta</p></div>
+<div id="dots" class="dots" aria-hidden="true"></div>
+<div class="progress" role="progressbar" aria-label="Treenin eteneminen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div>
+<div class="timeline"><span id="next">Seuraavaksi: työ</span><span id="total">Yhteensä 04:00</span></div>
+<div class="controls"><button id="start" class="primary" type="button">Aloita treeni</button><button id="reset" class="secondary" type="button" aria-label="Nollaa">↺ <span>Nollaa</span></button></div>
+<p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+<div class="wake-row"><span class="status-dot" aria-hidden="true"></span><p id="wake-status" role="status">Näytön hereilläpitoa pyydetään treenin alkaessa.</p><button id="wake-retry" type="button" hidden>Yritä uudelleen</button></div>
+</section>
+<aside class="settings-card" aria-labelledby="settings-title">
+<div class="section-heading"><h2 id="settings-title">Sinun treenisi</h2><span class="eyebrow">01 / ASETUKSET</span></div>
+<form id="settings" novalidate><fieldset id="fields"><legend class="sr-only">Treenin asetukset</legend>
+<div class="settings-grid"><label for="rounds">Kierroksia<input id="rounds" name="rounds" type="number" inputmode="numeric" min="1" max="99" step="1" value="8" required></label>
+<label for="work">Työ (s)<input id="work" name="work" type="number" inputmode="numeric" min="1" max="3600" step="1" value="20" required></label>
+<label for="rest">Lepo (s)<input id="rest" name="rest" type="number" inputmode="numeric" min="0" max="3600" step="1" value="10" required></label>
+<label for="prepare">Valmistautuminen (s)<input id="prepare" name="prepare" type="number" inputmode="numeric" min="0" max="3600" step="1" value="10" required></label></div>
+</fieldset><p id="error" role="alert"></p><label class="sound-toggle" for="sound"><span>Äänimerkit<small>Merkki vaihtuessa, lähtölaskenta 3–2–1</small></span><input id="sound" type="checkbox" role="switch"></label></form>
+<p id="audio-warning" role="status" hidden></p><p id="storage-warning" role="status" hidden>Asetuksia ei voi tallentaa tällä selaimella.</p>
+<div class="recipe"><span aria-hidden="true">↗</span><p><strong>Yksi kierros kerrallaan.</strong><br>Alkuvalmistelu on erillinen. Lepo vain kierrosten välissä — viimeisen työjakson jälkeen olet valmis.</p></div>
+<p class="settings-note">Asetukset tallentuvat tälle laitteelle. Muokkaa niitä ennen treeniä tai nollauksen jälkeen.</p>
+</aside></div>
+<footer><span id="offline-status" role="status">Offline-valmiutta tarkistetaan…</span><button id="update" type="button" hidden>Päivitä sovellus</button><button id="install" type="button" hidden>Asenna sovellus</button><span>EI TILEJÄ. EI HÄIRIÖITÄ.</span></footer>
+<details class="help"><summary>Asenna ja treenaa ilman verkkoyhteyttä</summary><p><strong>iPhone / iPad:</strong> avaa Safarissa → Jaa → Lisää Koti-valikkoon. <strong>Android:</strong> selaimen valikko → Asenna sovellus tai Lisää aloitusnäyttöön. <strong>Tietokone:</strong> käytä selaimen asennuskuvaketta, jos se on saatavilla.</p><p>Odota ensin ilmoitusta ”Valmis offline-käyttöön”. Pidä sovellus näkyvissä treenin ajan. Näytön hereilläpito riippuu selaimesta, käyttöjärjestelmästä ja virransäästöstä; sitä ei voi taata. Taustalla tai lukitulla näytöllä äänet voivat jäädä pois. Ajastin korjaa ajan palatessasi, mutta sivun sulkeminen tai lataaminen uudelleen nollaa treenin.</p></details>
+<noscript>Ajastin tarvitsee JavaScriptin. Ota se käyttöön selaimen asetuksista.</noscript>
+</main>
+</body></html>
